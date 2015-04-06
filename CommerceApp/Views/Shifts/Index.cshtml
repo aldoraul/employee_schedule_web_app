@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CommerceApp.Models.Shift>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShiftDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShiftPrimary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShiftDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShiftPrimary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ShiftID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ShiftID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ShiftID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CommerceApp.Models.TimeOff>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastDay)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastDay)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TimeOffID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TimeOffID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TimeOffID })
+        </td>
+    </tr>
+}
+
+</table>
