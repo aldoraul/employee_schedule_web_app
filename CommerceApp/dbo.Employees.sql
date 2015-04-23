@@ -3,7 +3,6 @@
     [firstName]           NVARCHAR (MAX) NULL,
     [lastName]            NVARCHAR (MAX) NULL,
     [jobTitle]            NVARCHAR (MAX) NULL,
-    [birthDate]           DATETIME       NOT NULL,
     [hireDate]            DATETIME       NOT NULL,
     [daysFirstCall]       INT            NOT NULL,
     [daysSecondCall]      INT            NOT NULL,

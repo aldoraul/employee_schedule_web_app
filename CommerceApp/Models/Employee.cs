@@ -24,14 +24,15 @@ namespace CommerceApp.Models
 
        
         
-        [DisplayName("Job Title")]
+        [DisplayName("Job Type")]
         public virtual string jobTitle { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+       [DisplayFormat(DataFormatString = "{0:MMM dd yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("Birth Date")]
         public virtual DateTime birthDate { get; set; }
-
-        [DisplayName("Hire Date")]
+        
+        [DisplayFormat(DataFormatString = "{0:MMM dd yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayName("Start Date")]
         public virtual DateTime hireDate { get; set; }
 
         [DisplayName("Days First Call")]
