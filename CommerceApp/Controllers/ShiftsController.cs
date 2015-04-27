@@ -18,7 +18,11 @@ namespace CommerceApp.Controllers
         // GET: Shifts
         public ActionResult Index()
         {
+            
             var shifts = db.Shifts.Include(s => s.Employee);
+            foreach (var shift in db.Shifts)
+                db.Shifts.Remove(shift);
+            
             return View(shifts.ToList());
         }
 

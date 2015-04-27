@@ -37,16 +37,22 @@ namespace CommerceApp.MockClass
 
             foreach (Shift element in shifts)
             {
+                string typeOfJob = Enums.GetName<ScheduleType>((ScheduleType)0);  
+                // this 0 should be assigned to employees and then the enum will take care of title and color
+
+                string statusColor = Enums.GetEnumDescription<ScheduleType>(typeOfJob);
+                string jobDescription = statusColor.Substring(8 , statusColor.Length - 8);
+                string colorCode = statusColor.Substring(0, statusColor.IndexOf(":"));
                 list.Add
             (
                 new JanitorSchedule
                  {
-                     ID = ++i,
-                     Title = element.Employee.lastName,
+                     ID = i,
+                     Title = jobDescription  + " " + element.Employee.lastName,
                      IsAllDayEvent = true,
                      Start = element.ShiftDate,
                      End = element.ShiftDate.AddDays(6),
-                     color = String.Format("blue")
+                     color = colorCode
                  }
 
             );
