@@ -182,6 +182,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\EmployeeDBContext-20150325172325.mdf" />
+    <Content Include="App_Data\EmployeeDBContext-20150325172325_log.ldf">
+      <DependentUpon>EmployeeDBContext-20150325172325.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\accordion.css" />
     <Content Include="Content\all.css" />
     <Content Include="Content\autocomplete.css" />
@@ -354,9 +358,7 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
