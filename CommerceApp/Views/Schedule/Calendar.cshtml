@@ -3,35 +3,85 @@
     Layout = null;
 }
 <!DOCTYPE html>
-
+<html>
 <head>
-<style>
-    .image {
-        background-color: white;
-        float: right;
-        width: 30%;
-        content: url(/Content/themes/base/images/commerce_long.png);
-    }
+    <style>
+        .image {
+            background-color: white;
+            float: right;
+            width: 30%;
+            content: url(/Content/themes/base/images/commerce_long.png);
+        }
 
-    .calendarSize{
-        height: 50%;
-        width: 50%;
-    }
-</style>
+        .calendarSize {
+            margin: 0 auto;
+            height: 60%;
+            width: 60%;
+        }
+
+        .imgFloatRight {
+            position: absolute;
+            right: 15px;
+            top: -12px;
+        }
+
+        #rotate {
+            /* Safari */
+            -webkit-transform: rotate(-90deg);
+            /* Firefox */
+            -moz-transform: rotate(-90deg);
+            /* IE */
+            -ms-transform: rotate(-90deg);
+            /* Opera */
+            -o-transform: rotate(-90deg);
+            /* Internet Explorer */
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
     <title>Comerece Schedule</title>
     <link rel='stylesheet' type='text/css' href='~/Content/fullcalendar.css' />
     <script type='text/javascript' src='~/scripts/jquery-2.1.3.min.js'></script>
     <script type='text/javascript' src='~/scripts/fullcalendar.js'></script>
+    <meta name="description" content="The description of my page" />
 </head>
-<div class="image"></div>
-<h1 align="center">Tech Support Schedule</h1>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#006633">
 
-<div class="calendarSize" id="calendar"></div>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(" ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#calendar').fullCalendar({
-            events: "@Url.Action("GetCalendarEvents")"
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Schedule", "Calendar", "Schedule")</li>
+                    <li>@Html.ActionLink("Employees", "Index", "Employees")</li> @*/* BA */*@
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="rotate">Schedule</div>
+    <div class="calendarSize" id="calendar"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                events: "@Url.Action("GetCalendarEvents")"
+            });
         });
-    });
-</script>
+    </script>
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

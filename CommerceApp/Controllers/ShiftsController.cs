@@ -20,9 +20,6 @@ namespace CommerceApp.Controllers
         {
             
             var shifts = db.Shifts.Include(s => s.Employee);
-            foreach (var shift in db.Shifts)
-                db.Shifts.Remove(shift);
-            
             return View(shifts.ToList());
         }
 

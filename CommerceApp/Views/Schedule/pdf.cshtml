@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Calendar";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .image {
+            background-color: white;
+            float: right;
+            width: 30%;
+            content: url(/Content/themes/base/images/commerce_long.png);
+        }
+
+        .calendarSize {
+            display: inline-block;
+            margin: 0px 60px 5px 100px;
+            height: 400px;
+            width: 500px;
+        }
+
+        .imgFloatRight {
+            position: absolute;
+            left: 15px;
+            top: -12px;
+        }
+
+        #rotate {
+            /* Safari */
+            -webkit-transform: rotate(-90deg);
+            /* Firefox */
+            -moz-transform: rotate(-90deg);
+            /* IE */
+            -ms-transform: rotate(-90deg);
+            /* Opera */
+            -o-transform: rotate(-90deg);
+            /* Internet Explorer */
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        }
+    </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <title>Comerece Schedule</title>
+    <link rel='stylesheet' type='text/css' href='~/Content/fullcalendar.css' />
+    <link rel='stylesheet' type='text/css' media="print" href='~/Content/fullcalendar.print2.css' />
+    <script type='text/javascript' src='~/scripts/jquery.js'></script>
+    <script type='text/javascript' src='~/scripts/fullcalendar.js'></script>
+    <script type='text/javascript' src='~/scripts/moment.min.js'></script>
+</head>
+<body>
+
+    <div class="calendarSize" id="calendar1"></div>
+    <div class="calendarSize" id="calendar2"></div>
+    <div class="calendarSize" id="calendar3"></div>
+    <div class="calendarSize" id="calendar4"></div>
+    <script type="text/javascript">
+        moment().format();
+    function initCalendar($calendarDiv, displayMonth) {
+        $calendarDiv.fullCalendar({
+            month: displayMonth,
+            weekMode: 'liquid',
+            firstDay: 3,
+            header: { left: 'title ', center: '', right: '' },
+            events: "@Url.Action("GetCalendarEvents")",
+            eventRender: function (event, element, view) {
+                if (event.start.getMonth() !== view.start.getMonth()) { return false; }
+            }
+        });
+    }
+
+        $(document).ready(function () {
+            var m = moment().get('month');
+        initCalendar($('#calendar1'), m-1);
+        initCalendar($('#calendar2'), m);
+        initCalendar($('#calendar3'), m+1);
+        initCalendar($('#calendar4'), m+2);
+    });
+    </script>
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
