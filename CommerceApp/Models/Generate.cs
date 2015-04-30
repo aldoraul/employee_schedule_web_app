@@ -42,7 +42,7 @@ namespace CommerceApp
                 if(!db.Shifts.Any()){
                      allShifts.Generate_OLB_Shifts(OLBTeam);
                              // here i have the olb team now i need to generate shifts to create schedule
-                      allShifts.Generate_MGR_Shifts(MGRTeam);
+                     // allShifts.Generate_MGR_Shifts(MGRTeam);
                 }
 
              var shifts = db.Shifts.ToList();

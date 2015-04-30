@@ -17,40 +17,42 @@ namespace CommerceApp
 
         bool prim_or_sec = true;
         
-        DateTime startDate = new DateTime(2015, 4, 29);
+        DateTime startDate = new DateTime(2015, 1, 7);
         DateTime endDate = new DateTime(2016, 1, 5);
-         public void Generate_OLB_Shifts(List<Employee> olbTeam)
-         {
-                    int count = 0;
-                    
-            
-            foreach (Employee person in olbTeam)
+        public void Generate_OLB_Shifts(List<Employee> olbTeam)
+        {
+            //int count = 0;
+
+            while (startDate < endDate)
+            {
+                foreach (Employee person in olbTeam)
+                {
+                    Shift again = new Shift();
+
+                    again.ShiftID = shift_id++;
+                    again.EmployeeID = person.EmployeeID;
+
+                    again.ShiftDate = startDate;//.AddDays(count);
+                    again.ShiftPrimary = prim_or_sec;
+
+                    db.Entry(again).State = EntityState.Added;
+                    db.SaveChanges();
+
+                    if (prim_or_sec == true)
+                    {                           // switch back from primary to secondary
+                        prim_or_sec = false;
+                    }
+                    else
                     {
-                        Shift again = new Shift();
-
-                        again.ShiftID = shift_id++;
-                        again.EmployeeID = person.EmployeeID;
-
-                        again.ShiftDate = startDate.AddDays(count);
-                        again.ShiftPrimary = prim_or_sec;
-                        
-                        db.Entry(again).State = EntityState.Added;
-                        db.SaveChanges();
-
-                        if (prim_or_sec == true)
-                        {                           // switch back from primary to secondary
-                            prim_or_sec = false;
-                        }
-                        else
-                        {
-                            count = count + 7;
-                            prim_or_sec = true;
-                        }
-                       
+                        startDate = startDate.AddDays(7);
+                        prim_or_sec = true;
                     }
 
+                }
+
             }
-    public void Generate_MGR_Shifts(List<Employee> mgrTeam){
+        }
+  /*  public void Generate_MGR_Shifts(List<Employee> mgrTeam){
         int count = 0;
         foreach (Employee person in mgrTeam)
         {
@@ -67,7 +69,7 @@ namespace CommerceApp
    
     
     
-    }
+    }*/
          
         }
     
