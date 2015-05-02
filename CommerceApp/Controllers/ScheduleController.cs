@@ -14,7 +14,7 @@ namespace CommerceApp.Controllers
     public class ScheduleController : Controller
     {
         private EmployeeDBContext db = new EmployeeDBContext();
-        int count = 0;
+        //int count = 0;
         
         // GET: Schedule
         public ActionResult Calendar()
@@ -25,8 +25,6 @@ namespace CommerceApp.Controllers
         // GET: Pdf
         public ActionResult ExportPdf()
         {
-          //  var s = new Shift();
-          //  var calendarList = s.getShifts(1).ToList();
             return new ActionAsPdf("Pdf")
             {
 
@@ -34,8 +32,7 @@ namespace CommerceApp.Controllers
                 PageOrientation = Rotativa.Options.Orientation.Landscape,
                 PageMargins = { Left = 1, Right = 1 }
             };
-            //          return new RazorPDF.PdfResult(calendarList.ToList());
-            //         return View(calendarList);
+
         }
         public ActionResult Pdf()
         {
@@ -45,9 +42,10 @@ public JsonResult GetCalendarEvents(double start, double end)
         {
           
                 var newSchedule = new GenerateSchedule();
-                var scheduleDetails = newSchedule.GenerateOLB();
-            
-                var calendarList = from item in scheduleDetails
+                var OLBDetails = newSchedule.GenerateOLB();
+                var AllDetails = OLBDetails;
+
+                var Allcalendar = from item in AllDetails
                                    select new
                                    {
                                        id = item.ID,
@@ -57,7 +55,8 @@ public JsonResult GetCalendarEvents(double start, double end)
                                        color = item.color,
                                        editable = true
                                    };
-            return Json(calendarList.ToArray(),JsonRequestBehavior.AllowGet);
+
+            return Json(Allcalendar.ToArray(),JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Delete()

@@ -38,3 +38,4 @@ C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Mig
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.csproj.GenerateResource.Cache
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.pdb
+C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.csprojResolveAssemblyReference.cache
