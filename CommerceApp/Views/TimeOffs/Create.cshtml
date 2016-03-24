@@ -12,10 +12,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>TimeOff</h4>
         <hr />
@@ -43,6 +43,32 @@
                 @Html.ValidationMessageFor(model => model.LastDay, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.timeOffType, htmlAttributes: new  { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+    List<SelectListItem> listItems = new List<SelectListItem>();
+    listItems.Add(new SelectListItem
+         {
+             Text = "Vacation",
+             Value = "Vacation"
+         });
+    listItems.Add(new SelectListItem
+         {
+             Text = "Training",
+             Value = "Training",
+         });
+    listItems.Add(new SelectListItem
+         {
+             Text = "Sick",
+             Value = "Sick"
+         });
+                }
+
+                @Html.DropDownListFor(model => model.timeOffType, listItems, "-- Select Type --")
+            </div>
+        </div>
+      
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

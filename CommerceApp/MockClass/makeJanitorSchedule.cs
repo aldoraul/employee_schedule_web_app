@@ -48,7 +48,7 @@ namespace CommerceApp.MockClass
                 new JanitorSchedule
                  {
                      ID = i,
-                     Title = jobDescription  + " " + element.Employee.lastName,
+                     Title = jobDescription  + " " + element.Employee.firstName,
                      IsAllDayEvent = true,
                      Start = element.ShiftDate,
                      End = element.ShiftDate.AddDays(6),

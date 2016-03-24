@@ -16,13 +16,38 @@ namespace CommerceApp.Controllers
         private EmployeeDBContext db = new EmployeeDBContext();
 
         // GET: Shifts
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
+            ViewBag.dateSortParm = sortOrder == "Date" ? "Date_desc": "Date";
+            ; ViewBag.nameSortParm = sortOrder == "name" ? "name_desc" : "name";
+            var shift = from s in db.Shifts 
+                        select s;
+            switch (sortOrder)
+            {
+                case "Date":
+                    shift = shift.OrderBy(s => s.ShiftDate);
+                    break;
+                case "Date_desc":
+                    shift = shift.OrderByDescending(s => s.ShiftDate);
+                    break;
+                case "name":
+                    shift = shift.OrderBy(s => s.Employee.lastName);
+                    break;
+                case "name_desc":
+                    shift = shift.OrderByDescending(s => s.Employee.lastName);
+                    break;
+                default:
+                    shift = shift.OrderBy(s => s.ShiftDate);
+                    break;
+            }
+            return View(shift.ToList());
+        }
+   /* {
             
             var shifts = db.Shifts.Include(s => s.Employee);
             return View(shifts.ToList());
         }
-
+        */
         // GET: Shifts/Details/5
         public ActionResult Details(int? id)
         {

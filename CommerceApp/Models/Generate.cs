@@ -16,7 +16,7 @@ namespace CommerceApp
 
         private EmployeeDBContext db = new EmployeeDBContext();
         int typeOfJob = 0;
-        DateTime startDate = new DateTime(2015, 1, 7);
+        //DateTime startDate = ;
         // int leastShifts = 0;
         IList<JanitorSchedule> all_schedule = new List<JanitorSchedule>();
         List<Employee> MGRTeam = new List<Employee>();
@@ -26,12 +26,30 @@ namespace CommerceApp
 
         public IList<JanitorSchedule> GenerateOLB()
         {
-
-
                 GenerateShifts allShifts = new GenerateShifts();
                 // int OLB_p_or_s = 1; // primary olb = 1, secondary olb = 2  
+            
                 List<Employee> fullTeam = db.Employees.ToList();
-               
+                var timeOff = db.TimeOffs.ToList();
+                var i = 1;
+                foreach (TimeOff element in timeOff)
+                {
+                    all_schedule.Add
+                    (
+                    new JanitorSchedule
+                    {
+                        ID = i,
+                        Title = element.timeOffType + " " + element.Employee.firstName,
+                        IsAllDayEvent = true,
+                        Start = element.FirstDay,
+                        End = element.LastDay,
+                        color = String.Format("gray")
+
+                    }
+                    );
+
+                    i++;
+                }
 
                 foreach (Employee element in fullTeam)
                 {
@@ -99,7 +117,7 @@ namespace CommerceApp
                             new JanitorSchedule
                             {
                                 ID = element.ShiftID,
-                                Title = jobDescription + " " + element.Employee.lastName,
+                                Title = jobDescription + " " + element.Employee.firstName,
                                 IsAllDayEvent = true,
                                 Start = element.ShiftDate,
                                 End = element.ShiftDate.AddDays(13),
@@ -113,7 +131,7 @@ namespace CommerceApp
                             new JanitorSchedule
                             {
                                 ID = element.ShiftID,
-                                Title = jobDescription + " " + element.Employee.lastName,
+                                Title = jobDescription + " " + element.Employee.firstName,
                                 IsAllDayEvent = true,
                                 Start = element.ShiftDate,
                                 End = element.ShiftDate.AddDays(6),

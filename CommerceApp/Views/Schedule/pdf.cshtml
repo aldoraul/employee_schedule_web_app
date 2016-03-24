@@ -1,5 +1,14 @@
-﻿@{
+﻿@model CommerceApp.Models.GeneratePDF
+
+@{
     ViewBag.Title = "Calendar";
+    var months = 3;
+    var startDate = DateTime.Today;
+    if ((int)Model.numberOfMonths !=0)
+    {
+        months = (int)Model.numberOfMonths;
+        startDate = Model.StartDate;
+    }
     Layout = null;
 }
 <!DOCTYPE html>
@@ -15,9 +24,16 @@
 
         .calendarSize {
             display: inline-block;
-            margin: 0px 60px 5px 100px;
-            height: 400px;
-            width: 500px;
+            margin: 0px 0px 5px 35px;
+            height: 500px;
+            width: 300px;
+        }
+
+        .calendarSizeSingle {
+            display: inline-block;
+            margin: 0px 0px 0px 175px;
+            height: 600px;
+            width: 1050px;
         }
 
         .imgFloatRight {
@@ -52,34 +68,38 @@
     <script type='text/javascript' src='~/scripts/moment.min.js'></script>
 </head>
 <body>
+    @if (@months <= 1)
+    { <div class="calendarSizeSingle" id="calendar0"></div>}
 
-    <div class="calendarSize" id="calendar1"></div>
-    <div class="calendarSize" id="calendar2"></div>
-    <div class="calendarSize" id="calendar3"></div>
-    <div class="calendarSize" id="calendar4"></div>
-    <script type="text/javascript">
-        moment().format();
-    function initCalendar($calendarDiv, displayMonth) {
-        $calendarDiv.fullCalendar({
-            month: displayMonth,
-            weekMode: 'liquid',
-            firstDay: 3,
-            header: { left: 'title ', center: '', right: '' },
-            events: "@Url.Action("GetCalendarEvents")",
-            eventRender: function (event, element, view) {
-                if (event.start.getMonth() !== view.start.getMonth()) { return false; }
-            }
-        });
+    else
+    {
+        for (int i = 0; i < @months; i++)
+        {
+            <div class="calendarSize" id="calendar@(i)"></div>}
     }
 
+
+
+    <script type="text/javascript">
+        moment().format();
+        function initCalendar($calendarDiv, displayMonth) {
+            $calendarDiv.fullCalendar({
+                month: displayMonth,
+                weekMode: 'liquid',
+                firstDay: 3,
+                header: { left: 'title ', center: '', right: '' },
+                events: "@Url.Action("GetCalendarEvents")"
+            });
+        }
         $(document).ready(function () {
-            var m = moment().get('month');
-        initCalendar($('#calendar1'), m-1);
-        initCalendar($('#calendar2'), m);
-        initCalendar($('#calendar3'), m+1);
-        initCalendar($('#calendar4'), m+2);
-    });
+            var myCount = '@(months)';
+            var m = moment('@(startDate)').month();
+            for (var i = 0; i < myCount; i++) {
+                initCalendar($('#calendar' + i), m + i);
+            }
+        });
     </script>
     @Scripts.Render("~/bundles/bootstrap")
 </body>
 </html>
+

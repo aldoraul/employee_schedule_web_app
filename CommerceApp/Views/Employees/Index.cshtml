@@ -9,19 +9,28 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Find: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
-            First Name</th>
-        <th>
-            @Html.DisplayNameFor(model => model.lastName)
+            @Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.fNameSortParm })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.jobTitle)
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.lNameSortParm })
         </th>
-       <th>
+        <th>
+            @Html.ActionLink("Job Type", "Index", new { sortOrder = ViewBag.jobSortParm })
+        </th>
+   @*    <th>
             @Html.DisplayNameFor(model => model.birthDate)
-        </th>
+        </th>*@
          
         <th>
             @Html.DisplayNameFor(model => model.hireDate)
@@ -49,9 +58,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.jobTitle)
         </td>
-        <td>
+      @*  <td>
             @Html.DisplayFor(modelItem => item.birthDate)
-        </td>
+        </td>*@
          
         <td>
             @Html.DisplayFor(modelItem => item.hireDate)

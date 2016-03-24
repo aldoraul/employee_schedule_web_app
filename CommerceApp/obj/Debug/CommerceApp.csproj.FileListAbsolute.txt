@@ -26,6 +26,7 @@ C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\bin\System.Web.WebPages.D
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\bin\System.Web.WebPages.Razor.xml
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\bin\Antlr3.Runtime.pdb
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\bin\Newtonsoft.Json.xml
+C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.csprojResolveAssemblyReference.cache
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Migrations.InitialCreate.resources
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Migrations.AddMigrationAddTimeOff.resources
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Migrations.EID.resources
@@ -35,7 +36,8 @@ C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Mig
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Migrations.EID23.resources
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Migrations.EID24.resources
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Migrations.AddShfit.resources
+C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Migrations.timeOffType.resources
+C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.Migrations.birth_date.resources
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.csproj.GenerateResource.Cache
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.pdb
-C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp\obj\Debug\CommerceApp.csprojResolveAssemblyReference.cache

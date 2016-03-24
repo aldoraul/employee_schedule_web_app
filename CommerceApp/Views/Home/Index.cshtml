@@ -2,31 +2,31 @@
     ViewBag.Title = "Home Page";
 }
 
-<div id="commerceBox "class="jumbotron" style="background-color:#006633; border:solid; border-color:white; border-width:15px">
-    @*<h1 align="center" style="color:white">Commerce Bank</h1>*@
+<div id="commerceBox "class="jumbotron" style="background-color:rgb(19, 104,136); border:solid; border-color:white; border-width:15px">
+    @*<h1 align="center" style="color:white">Generic Bank</h1>*@
     
-    <img class="center" src="~/Content/themes/base/images/commerce_long.png" alt="Commerce Bank"/>
+    <img class="center" src="~/Content/themes/base/images/new-bank.jpg" alt="Commerce Bank"/>
 
     <p class="lead" align="center" style="color:white"> Scheduling App for Online Applications</p>
-    <p align="center"><a href="/Schedule/Calendar" class="btn btn-primary btn-lg">View Calendar &raquo;</a></p>
+    <p align="center"><a style="background-color: darkorange;" href="/Schedule/Calendar" class="btn btn-primary btn-lg">View Calendar &raquo;</a></p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2 style="color:#006633">Create Employee</h2>
+        <h2 style="color:rgb(19, 104,136)">Create Employee</h2>
         <p>
-            Create new employee to assigned to Technical Support Schedule
+            Create new employee to be assigned to the Technical Support Schedule
         </p>
-        <p><a class="btn btn-primary" href="/Employees/Create">Create Employee &raquo;</a></p>
+        <p><a class="btn btn-primary" style="background-color: darkorange;" href="/Employees/Create">Create Employee &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2 style="color:#006633">Requested Time Off</h2>
+        <h2 style="color:rgb(19, 104,136)">Requested Time Off</h2>
         <p>Enter time off request from employees including vacation, training etc.</p>
-        <p><a class="btn btn-primary" href="/Timeoffs/Create">Time Off &raquo;</a></p>
+        <p><a class="btn btn-primary" style="background-color: darkorange;" href="/Timeoffs/Create">Time Off &raquo;</a></p>
     </div>
     <div class="col-md-4">
-        <h2 style="color:#006633">Print Preview</h2>
+        <h2 style="color:rgb(19, 104,136)">Print Preview</h2>
         <p>Create a print preview of current schedule to be printed.</p>
-        <p><a class="btn btn-primary" href="/Schedule/ExportPdf">Print Preview &raquo;</a></p>
+        <p ><a class="btn btn-primary" style="background-color: darkorange;" href="/Schedule/ExportPdf">Print Preview &raquo;</a></p>
     </div>
 </div>

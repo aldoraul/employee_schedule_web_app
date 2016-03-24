@@ -14,6 +14,8 @@ namespace CommerceApp.Models
     public class Employee
     {
         [Key]
+        [DisplayName("Employee I.D.")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmployeeID { get; set; }
 
         [DisplayName("First Name")]
@@ -27,18 +29,18 @@ namespace CommerceApp.Models
         [DisplayName("Job Type")]
         public virtual string jobTitle { get; set; }
 
-       [DisplayFormat(DataFormatString = "{0:MMM dd yyyy}", ApplyFormatInEditMode = true)]
+      /* [DisplayFormat(DataFormatString = "{0:MMM dd yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("Birth Date")]
-        public virtual DateTime birthDate { get; set; }
+        public virtual DateTime birthDate { get; set; }*/
         
         [DisplayFormat(DataFormatString = "{0:MMM dd yyyy}", ApplyFormatInEditMode = true)]
         [DisplayName("Start Date")]
         public virtual DateTime hireDate { get; set; }
 
-        [DisplayName("Days First Call")]
+        [DisplayName("Primary On Call Shift")]
         public virtual int daysFirstCall { get; set; }
 
-        [DisplayName("Days Second Call")]
+        [DisplayName("Secondary On Call Shift")]
         public virtual int daysSecondCall { get; set; }
 
         [DataType(DataType.EmailAddress)]

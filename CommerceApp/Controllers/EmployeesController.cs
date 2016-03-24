@@ -15,9 +15,44 @@ namespace CommerceApp.Controllers
         private EmployeeDBContext db = new EmployeeDBContext();
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString)
         {
-            return View(db.Employees.ToList());
+            ViewBag.fNameSortParm = sortOrder == "fname" ? "fname_desc": "fname";
+            ViewBag.lNameSortParm = sortOrder == "lname" ? "lname_desc" : "lname";
+            ViewBag.jobSortParm = sortOrder == "job_type" ? "job_type_desc" : "job_type";
+            var employee = from s in db.Employees
+                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                employee = employee.Where(s => s.lastName.Contains(searchString)
+                                       || s.firstName.Contains(searchString)
+                                       || s.jobTitle.Contains(searchString));
+            }
+            switch (sortOrder)
+            {
+                case "fName_desc":
+                    employee = employee.OrderByDescending(s => s.firstName);
+                    break;
+                case "fname":
+                    employee = employee.OrderBy(s => s.firstName);
+                    break;
+                case "lname":
+                    employee = employee.OrderBy(s => s.lastName);
+                    break;
+                case "lname_desc":
+                    employee = employee.OrderByDescending(s => s.lastName);
+                    break;
+                case "job_type":
+                    employee = employee.OrderBy(s => s.jobTitle);
+                    break;
+                case "job_type_desc":
+                    employee = employee.OrderByDescending(s => s.jobTitle);
+                    break;
+                default:
+                    employee = employee.OrderBy(s => s.jobTitle);
+                    break;
+            }
+            return View(employee.ToList());
         }
 
         // GET: Employees/Details/5
@@ -48,7 +83,7 @@ namespace CommerceApp.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "EmployeeID,firstName,lastName,jobTitle,birthDate,hireDate,daysFirstCall,daysSecondCall,Email")] Employee employee)
+        public ActionResult Create([Bind(Include = "EmployeeID,firstName,lastName,jobTitle,hireDate,daysFirstCall,daysSecondCall,Email")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -80,7 +115,7 @@ namespace CommerceApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "EmployeeID,firstName,lastName,jobTitle,birthDate,hireDate,daysFirstCall,daysSecondCall,Email")] Employee employee)
+        public ActionResult Edit([Bind(Include = "EmployeeID,firstName,lastName,jobTitle,hireDate,daysFirstCall,daysSecondCall,Email")] Employee employee)
         {
             if (ModelState.IsValid)
             {

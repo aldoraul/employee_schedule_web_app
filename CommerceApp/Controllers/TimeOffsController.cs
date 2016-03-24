@@ -49,7 +49,7 @@ namespace CommerceApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "TimeOffID,EmployeeID,FirstDay,LastDay")] TimeOff timeOff)
+        public ActionResult Create([Bind(Include = "TimeOffID,EmployeeID,FirstDay,LastDay,TimeOffType")] TimeOff timeOff)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace CommerceApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "TimeOffID,EmployeeID,FirstDay,LastDay")] TimeOff timeOff)
+        public ActionResult Edit([Bind(Include = "TimeOffID,EmployeeID,FirstDay,LastDay,TimeOffType")] TimeOff timeOff)
         {
             if (ModelState.IsValid)
             {

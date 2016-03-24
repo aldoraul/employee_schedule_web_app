@@ -10,11 +10,15 @@ namespace CommerceApp.Models
 {
     public class Shift
     {
+        [DisplayName("Shift I.D.")]
+
         public int ShiftID { get; set; }
         public int EmployeeID { get; set; }
         public virtual Employee Employee { get; set; }
         [DisplayFormat(DataFormatString = "{0:MMM dd yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayName("Shift Date")]
         public DateTime ShiftDate { get; set; }
+        [DisplayName("Primary Shift")]
         public bool ShiftPrimary { get; set; }
 
     }

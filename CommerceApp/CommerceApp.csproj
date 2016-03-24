@@ -123,8 +123,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Migrations\201505052321364_timeOffType.cs" />
+    <Compile Include="Migrations\201505052321364_timeOffType.Designer.cs">
+      <DependentUpon>201505052321364_timeOffType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505060332213_birth_date.cs" />
+    <Compile Include="Migrations\201505060332213_birth_date.Designer.cs">
+      <DependentUpon>201505060332213_birth_date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CalendarDate.cs" />
     <Compile Include="Models\Generate.cs" />
     <Compile Include="Models\GenerateAll.cs" />
+    <Compile Include="Models\GeneratePDF.cs" />
     <Compile Include="Models\GenerateShifts.cs" />
     <Compile Include="Shared.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
@@ -238,6 +248,7 @@
     <Content Include="Content\themes\base\draggable.css" />
     <Content Include="Content\themes\base\images\commerce_centered.jpg" />
     <Content Include="Content\themes\base\images\commerce_long.png" />
+    <Content Include="Content\themes\base\images\new-bank.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -323,7 +334,9 @@
     <Content Include="Views\Shifts\Details.cshtml" />
     <Content Include="Views\Shifts\Edit.cshtml" />
     <Content Include="Views\Shifts\Index.cshtml" />
-    <Content Include="Views\Schedule\pdf.cshtml" />
+    <Content Include="Views\Schedule\ConfigurePDF.cshtml" />
+    <Content Include="Views\Schedule\Pdf.cshtml" />
+    <Content Include="Views\Schedule\CalendarDate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201503252244077_InitialCreate.resx">
@@ -352,6 +365,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504060157149_AddShfit.resx">
       <DependentUpon>201504060157149_AddShfit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505052321364_timeOffType.resx">
+      <DependentUpon>201505052321364_timeOffType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505060332213_birth_date.resx">
+      <DependentUpon>201505060332213_birth_date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

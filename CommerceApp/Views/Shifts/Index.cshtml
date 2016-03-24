@@ -15,7 +15,10 @@
             @Html.DisplayNameFor(model => model.Employee.firstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ShiftDate)
+            @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.nameSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Shift Date", "Index", new { sortOrder = ViewBag.dateSortParm })
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ShiftPrimary)
@@ -27,6 +30,9 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Employee.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.lastName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ShiftDate)

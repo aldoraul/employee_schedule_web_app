@@ -2,6 +2,7 @@ C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\CommerceA
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\CommerceApp.Tests.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\CommerceApp.Tests.pdb
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\CommerceApp.dll
+C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.Helpers.dll
@@ -10,10 +11,11 @@ C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.We
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.WebPages.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\Rotativa.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\CommerceApp.pdb
+C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.Helpers.xml
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.Mvc.xml
@@ -21,8 +23,8 @@ C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.We
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.WebPages.xml
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\EntityFramework.xml
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\bin\Debug\EntityFramework.xml
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\obj\Debug\CommerceApp.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\obj\Debug\CommerceApp.Tests.dll
 C:\Users\Aldo\Source\NewRepos\New_Commerce\CommerceApp.Tests\obj\Debug\CommerceApp.Tests.pdb

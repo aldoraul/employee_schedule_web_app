@@ -15,10 +15,16 @@
             @Html.DisplayNameFor(model => model.Employee.firstName)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Employee.jobTitle)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.FirstDay)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.LastDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.timeOffType)
         </th>
         <th></th>
     </tr>
@@ -29,10 +35,16 @@
             @Html.DisplayFor(modelItem => item.Employee.firstName)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Employee.jobTitle)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.FirstDay)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.LastDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeOffType)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.TimeOffID }) |
